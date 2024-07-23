@@ -1,6 +1,6 @@
 [
 	{
-		"id": "54321234",
+		"id": "54321",
 		"activity_submitted": "1719486190058", 
 		"activity_type": "cycle",
 		"activity_duration": "60"
@@ -14,7 +14,7 @@
 	},
 
     {
-		"id": "63939474",
+		"id": "639394",
 		"activity_submitted": "1719486190058",
 		"activity_type": "playing football",
 		"activity_duration": "90"
