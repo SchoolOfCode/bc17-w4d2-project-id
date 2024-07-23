@@ -1,0 +1,22 @@
+[
+	{
+		"id": "54321234",
+		"activity_submitted": "1719486190058", 
+		"activity_type": "cycle",
+		"activity_duration": "60"
+	},
+
+    {
+		"id": "123456",
+		"activity_submitted": "1719486190058", 
+		"activity_type": "run",
+		"activity_duration": "45"
+	},
+
+    {
+		"id": "63939474",
+		"activity_submitted": "1719486190058",
+		"activity_type": "playing football",
+		"activity_duration": "90"
+	}
+]
