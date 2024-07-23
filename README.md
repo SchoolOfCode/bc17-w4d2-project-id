@@ -1,1 +1,6 @@
-Feel free to delete this and start from scratch.
+E1U1
+
+run and install the application (our Express APP), ✅
+GET request to “http://localhost:3000/”, ✅
+check that we get back a response with status code of 200 and text saying “Hello World!” ✅
+check to see that the Node API has also logged the request in the terminal (console.log) ✅
