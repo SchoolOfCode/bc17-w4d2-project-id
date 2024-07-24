@@ -81,5 +81,29 @@ function randomIdGenerator() {
             randomIdGenerator() // If a match is found then recall the function
         } 
     }
+
     return randomId
+
+}
+
+app.delete('/activities/:id', async (req, res) => {
+
+    try { 
+        const deletedTask = await deleteTask(req.params.id)
+        if (!deletedTask) {   // if there is not - error message
+        return res.status(404).json({ error: 'Task not found'})
+        }
+        // if there is a match - delete it
+        //res.status(200).json({success:`Task successfully deleted" ${deletedTask}`})
+        res.status(200).json({type: 'success', payload: deletedTask})
+    } catch {
+        res.status(500).json({error: "Error handling request"})
+    }
+})
+
+async function deleteTask(activityId) {
+const index = activities.findIndex(({ id }) => id === activityId);  // finding the index of the activity matching the id
+const deletedActivity = activities[index]; // finding the activity matching the id
+delete activities[index]; // deleted the selected activty
+return deletedActivity; // returns the activity we got rid of
 }
