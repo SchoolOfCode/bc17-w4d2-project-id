@@ -22,9 +22,16 @@ app.get( '/activities', (req, res) => {
     res.json(activities)
 })
 
-app.post('/activities', (req, res) => {
-    let activityType = req.body.activity_type;
-    let activityDuration = req.body.activity_duration;
+app.post('/activities', async (req, res) => { 
+    try {
+        const newTask = await addNewTask(req.body.activity_type, req.body.activity_duration)
+        res.json(newTask)
+    } catch(error) {
+        res.status(500).send("Error handling request")
+    }
+})
+
+async function addNewTask(activityType, activityDuration) {
     let uniqueIdentifier = randomIdGenerator()
     let timestamp = Date.now()
     activities.push({
@@ -33,15 +40,14 @@ app.post('/activities', (req, res) => {
         activityType,
         activityDuration
     })
-    res.json(activities[activities.length - 1])
-})
-
+    return activities[activities.length - 1]
+} 
 
 function randomIdGenerator() {
-    let randomId = Math.floor((Math.random() * 1000000))
-    for (let i=0; i<activities.length; i++) {
+    let randomId = Math.floor((Math.random() * 1000000)) // Generates a random number that is 6 digits long
+    for (let i=0; i<activities.length; i++) { // Loop through all current IDs to make sure we don't have one that matches the randomly generated one
         if (randomId === activities[i].id) {
-            randomIdGenerator()
+            randomIdGenerator() // If a match is found then recall the function
         } 
     }
     return randomId
