@@ -24,6 +24,8 @@ app.get( '/activities', (req, res) => {
 
 app.post('/activities', async (req, res) => { 
     try {
+       if  (!req.body.activity_type || !req.body.activity_duration) {
+        return res.status(404).json({ error: 'Error - provide activity info' });}
         const newTask = await addNewTask(req.body.activity_type, req.body.activity_duration)
         res.json(newTask)
     } catch(error) {

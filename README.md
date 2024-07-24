@@ -7,10 +7,11 @@ check to see that the Node API has also logged the request in the terminal (cons
 
 E1U2
 
-Configure Helmet configured as one of the first pieces of middleware.
-Make sure “X-Powered-By: Express” is not  in the response hadders
+Configure Helmet configured as one of the first pieces of middleware. ✅
+Make sure “X-Powered-By: Express” is not  in the response hadders ✅
 
 E2U1
 
-make a GET request to “http://localhost:3000/activities”
-esponde to the request with the correct status code and an array of User Activity objects in the response body (response.data).
+make a GET request to “http://localhost:3000/activities” ✅
+esponde to the request with the correct status code and an array of User Activity objects in the response body (response.data). ✅
+
